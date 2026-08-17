@@ -1,0 +1,41 @@
+/*
+  Paleta por produto -- ZenCortex.
+  Sobrescreve os tokens de cor (:root) de ../reviews.css para refletir a
+  identidade visual real da oferta, mantendo layout/estrutura do MODELO REVIEW
+  intactos (so as cores mudam).
+
+  Fonte dos tokens (curl em 2026-08-17, zencortex24.com/assets/css/style.css --
+  funil real do produto ZenCortex): --bs-primary:#24817c (teal) com
+  hover/active #1f6e69 / #1d6763, CTA solido #ffd814 com borda #fcd200
+  (.btn-primary-new do CSS oficial -- mesma classe/cor ja usada no funil
+  de Tinnitrol, mesmo template de afiliado BuyGoods).
+*/
+:root{
+  --navy-1:#24817c;
+  --navy-2:#1d6763;
+  --testimonial-navy:#215554;
+  --panel-gray:#eef9f6;
+  --cta-1:#ffd814;
+  --cta-2:#ffd814;
+  --cta-hover-1:#fff2a8;
+  --cta-hover-2:#fcd200;
+  --badge-border:rgba(255,216,20,.6);
+}
+
+.site-badge a:hover{
+  background:rgba(255,216,20,.2);
+  border-color:var(--cta-1);
+  box-shadow:0 6px 20px rgba(255,216,20,.4);
+}
+
+/* A foto hero (zencortex-hero.jpg, 500x578) renderizava minuscula (~191px de
+   largura) com o max-width:70% padrao de reviews.css -- mesmo bug ja
+   corrigido em tinnitrol.css e nerveharmony.css: como o <a> pai e
+   inline-block dentro de um flex container (sem largura propria definida),
+   a % nao tem containing block estavel e o Chrome resolve um valor bem menor
+   que os 70% do container visual. Removendo o cap de largura percentual no
+   desktop e deixando so max-height (ja calculada por reviews.css) resolve o
+   tamanho via aspect-ratio nativo do arquivo. */
+@media (min-width: 768px){
+  .hero-image img{max-width:none}
+}
