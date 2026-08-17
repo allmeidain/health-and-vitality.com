@@ -27,3 +27,15 @@
   border-color:var(--cta-1);
   box-shadow:0 6px 20px rgba(38,169,224,.4);
 }
+
+/* A foto hero (brainsavior-hero.webp, 600x600) renderizava pequena com o
+   max-width:70% padrao de reviews.css -- como o <a> pai e inline-block
+   (sem largura propria), a % resolve contra o tamanho intrinseco do
+   proprio arquivo (600px) em vez do container visual, deixando a foto
+   bem menor que a altura disponivel. Removendo o cap de largura
+   percentual no desktop e deixando so max-height (ja calculada por
+   reviews.css) resolve o tamanho via aspect-ratio nativo do arquivo --
+   mesmo ajuste ja aplicado em nerveharmony.css e tinnitrol.css. */
+@media (min-width: 768px){
+  .hero-image img{max-width:none}
+}

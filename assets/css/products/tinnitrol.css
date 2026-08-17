@@ -1,0 +1,40 @@
+/*
+  Paleta por produto -- Tinnitrol.
+  Sobrescreve os tokens de cor (:root) de ../reviews.css para refletir a
+  identidade visual real da oferta, mantendo layout/estrutura do MODELO REVIEW
+  intactos (so as cores mudam).
+
+  Fonte dos tokens (curl em 2026-08-17, audivive.com/assets/css/style.css --
+  funil real do produto Tinnitrol): --bs-primary:#037dc2 (azul medio) e
+  #023f61 (azul escuro dos blocos de destaque/rotulo), CTA solido #ffd814
+  com borda #fcd200 e hover #f7ca00 (.btn-primary-new do CSS oficial).
+*/
+:root{
+  --navy-1:#023f61;
+  --navy-2:#037dc2;
+  --testimonial-navy:#023f61;
+  --panel-gray:#e6f2f9;
+  --cta-1:#ffd814;
+  --cta-2:#ffd814;
+  --cta-hover-1:#fff2a8;
+  --cta-hover-2:#f7ca00;
+  --badge-border:rgba(255,216,20,.6);
+}
+
+.site-badge a:hover{
+  background:rgba(255,216,20,.2);
+  border-color:var(--cta-1);
+  box-shadow:0 6px 20px rgba(255,216,20,.4);
+}
+
+/* A foto hero (tinnitrol-hero.jpg, 550x550) renderizava pequena com o
+   max-width:70% padrao de reviews.css -- como o <a> pai e inline-block
+   (sem largura propria), a % resolve contra o tamanho intrinseco do
+   proprio arquivo (550px) em vez do container visual, deixando a foto
+   bem menor que a altura disponivel. Removendo o cap de largura
+   percentual no desktop e deixando so max-height (ja calculada por
+   reviews.css) resolve o tamanho via aspect-ratio nativo do arquivo --
+   mesmo ajuste ja aplicado em nerveharmony.css. */
+@media (min-width: 768px){
+  .hero-image img{max-width:none}
+}
