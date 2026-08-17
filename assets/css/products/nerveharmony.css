@@ -26,3 +26,15 @@
   border-color:var(--cta-1);
   box-shadow:0 6px 20px rgba(246,168,33,.4);
 }
+
+/* A foto hero (nerveharmony-hero.png, ja cortada para remover a margem
+   transparente do PNG original de 680x680) ainda renderizava pequena com o
+   max-width:70% padrao de reviews.css -- mesma ambiguidade de percentual
+   descrita no comentario de .hero-image img daquele arquivo, so que aqui
+   afetando max-width mesmo sem usar width:%. Removendo o cap de largura
+   percentual e deixando so max-height (a mesma altura ja calculada por
+   reviews.css) resolve o tamanho via aspect-ratio nativo do arquivo, sem
+   ambiguidade de containing block. */
+@media (min-width: 768px){
+  .hero-image img{max-width:none}
+}
