@@ -1,0 +1,29 @@
+/*
+  Paleta por produto -- Brain Savior.
+  Sobrescreve os tokens de cor (:root) de ../reviews.css para refletir a
+  identidade visual real da oferta, mantendo layout/estrutura do MODELO REVIEW
+  intactos (so as cores mudam).
+
+  Fonte dos tokens (curl em 2026-08-17, mindboostingtips.com/css/style.css?v=1.15
+  -- site oficial real por tras do link DTC de afiliado): navy principal #114A97
+  (--color-main), azul claro/CTA #26A9E0 (--color-main-light / --color-buttons)
+  com hover #218fbd (--color-buttons-hover), e dourado #fcaf0d usado no selo de
+  garantia "money back guarantee" do site oficial.
+*/
+:root{
+  --navy-1:#114A97;
+  --navy-2:#0c3670;
+  --testimonial-navy:#114A97;
+  --panel-gray:#F5F7FA;
+  --cta-1:#26A9E0;
+  --cta-2:#218fbd;
+  --cta-hover-1:#3dbaf0;
+  --cta-hover-2:#26A9E0;
+  --badge-border:rgba(252,175,13,.6);
+}
+
+.site-badge a:hover{
+  background:rgba(38,169,224,.2);
+  border-color:var(--cta-1);
+  box-shadow:0 6px 20px rgba(38,169,224,.4);
+}
