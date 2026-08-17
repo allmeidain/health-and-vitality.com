@@ -1,0 +1,42 @@
+/*
+  Paleta por produto -- Prostadine.
+  Sobrescreve os tokens de cor (:root) de ../reviews.css para refletir a
+  identidade visual real da oferta, mantendo layout/estrutura do MODELO REVIEW
+  intactos (so as cores mudam).
+
+  Fonte dos tokens (curl em 2026-08-17, theprostadine.com -- funil/TSL real
+  do produto Prostadine): navy profundo #19265b e azul medio #5b6cb4
+  predominantes no rotulo do frasco e nos blocos de destaque da pagina
+  oficial, com detalhe teal #2fb3c5 (referencia as algas marinhas dos
+  ingredientes). CTA em dourado solido, mesmo padrao ja usado em
+  tinnitrol.css/zencortex.css para maximo contraste contra o navy.
+*/
+:root{
+  --navy-1:#19265b;
+  --navy-2:#5b6cb4;
+  --testimonial-navy:#1f2c5c;
+  --panel-gray:#eef1f8;
+  --cta-1:#ffd814;
+  --cta-2:#ffd814;
+  --cta-hover-1:#fff2a8;
+  --cta-hover-2:#f7ca00;
+  --badge-border:rgba(255,216,20,.6);
+}
+
+.site-badge a:hover{
+  background:rgba(255,216,20,.2);
+  border-color:var(--cta-1);
+  box-shadow:0 6px 20px rgba(255,216,20,.4);
+}
+
+/* A foto hero (prostadine-hero.png, 671x700) renderizava pequena com o
+   max-width:70% padrao de reviews.css -- como o <a> pai e inline-block
+   (sem largura propria), a % resolve contra o tamanho intrinseco do
+   proprio arquivo em vez do container visual, deixando a foto bem menor
+   que a altura disponivel. Removendo o cap de largura percentual no
+   desktop e deixando so max-height (ja calculada por reviews.css) resolve
+   o tamanho via aspect-ratio nativo do arquivo -- mesmo ajuste ja aplicado
+   em tinnitrol.css/zencortex.css/brainsavior.css/nerveharmony.css. */
+@media (min-width: 768px){
+  .hero-image img{max-width:none}
+}
