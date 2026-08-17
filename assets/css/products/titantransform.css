@@ -1,0 +1,32 @@
+/*
+  Paleta por produto -- Titan Transform.
+  Sobrescreve os tokens de cor (:root) de ../reviews.css para refletir a
+  identidade visual real da oferta, mantendo layout/estrutura do MODELO REVIEW
+  intactos (so as cores mudam).
+
+  Fonte dos tokens (curl em 2026-08-17, warriorrecharge.com / titantransform.com):
+  Navy escuro #08579b e deep dark/navy #101215 predominantes nos banners e fundos
+  da pagina oficial, com azul royal vibrante #1c8cf9 nos destaques, e amarelo/dourado
+  #ffd814 nos botoes de compra e CTA.
+*/
+:root{
+  --navy-1:#08579b;
+  --navy-2:#101215;
+  --testimonial-navy:#0c365b;
+  --panel-gray:#edf5fc;
+  --cta-1:#ffd814;
+  --cta-2:#ffd814;
+  --cta-hover-1:#fff2a8;
+  --cta-hover-2:#f7ca00;
+  --badge-border:rgba(255,216,20,.6);
+}
+
+.site-badge a:hover{
+  background:rgba(255,216,20,.2);
+  border-color:var(--cta-1);
+  box-shadow:0 6px 20px rgba(255,216,20,.4);
+}
+
+@media (min-width: 768px){
+  .hero-image img{max-width:none}
+}
