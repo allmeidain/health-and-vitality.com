@@ -1,0 +1,27 @@
+/*
+  Paleta por produto -- JellyLean.
+  Sobrescreve os tokens de cor (:root) de ../reviews.css para refletir a
+  identidade visual real da oferta, mantendo layout/estrutura do MODELO REVIEW
+  intactos (so as cores mudam).
+
+  Fonte dos tokens (curl em 2026-08-18, jellylean.us.com/assets/style.css --
+  funil oficial do produto; cor primaria confirmada por amostragem de pixel no
+  rotulo real da garrafa em jellylean-3-bottles.webp -- rgb(255,85,36)).
+*/
+:root{
+  --navy-1:#FF5524;
+  --navy-2:#D9410F;
+  --testimonial-navy:#C23D14;
+  --panel-gray:#FFF3EE;
+  --cta-1:#3FAE2A;
+  --cta-2:#2E8A1E;
+  --cta-hover-1:#4FC437;
+  --cta-hover-2:#256E17;
+  --badge-border:rgba(63,174,42,.6);
+}
+
+.site-badge a:hover{
+  background:rgba(255,85,36,.15);
+  border-color:var(--navy-1);
+  box-shadow:0 6px 20px rgba(255,85,36,.35);
+}
